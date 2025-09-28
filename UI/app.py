@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load model
-model = joblib.load("best_model.pkl")  # saved pipeline (preprocessing + model)
+model = joblib.load("models/best_model.pkl")  
 
 st.title("Heart Disease Prediction App")
 
