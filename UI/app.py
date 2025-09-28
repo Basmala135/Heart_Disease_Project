@@ -11,22 +11,38 @@ st.title("Heart Disease Prediction App")
 
 st.sidebar.header("User Input Features")
 
-# Example input fields (adjust to your dataset)
 def user_input():
+    # Key inputs from user
     age = st.sidebar.number_input("Age", 20, 100, 50)
-    sex = st.sidebar.selectbox("Sex", (0, 1))  # 0=female, 1=male
+    sex = st.sidebar.selectbox("Sex (0=Female, 1=Male)", (0, 1))
+    trestbps = st.sidebar.number_input("Resting BP", 80, 200, 120)
     chol = st.sidebar.number_input("Cholesterol", 100, 400, 200)
-    trestbps = st.sidebar.number_input("Resting Blood Pressure", 80, 200, 120)
-    thalach = st.sidebar.number_input("Max Heart Rate Achieved", 60, 220, 150)
+    thalach = st.sidebar.number_input("Max Heart Rate", 60, 220, 150)
     oldpeak = st.sidebar.number_input("ST Depression", 0.0, 6.0, 1.0)
+
+    # Other features → default values
+    cp = 0          # chest pain type
+    fbs = 0         # fasting blood sugar > 120 mg/dl
+    restecg = 1     # resting ECG normal
+    exang = 0       # no exercise induced angina
+    slope = 1       # slope of ST segment
+    ca = 0          # number of major vessels
+    thal = 2        # thalassemia (normal)
 
     data = {
         "age": age,
         "sex": sex,
-        "chol": chol,
+        "cp": cp,
         "trestbps": trestbps,
+        "chol": chol,
+        "fbs": fbs,
+        "restecg": restecg,
         "thalach": thalach,
+        "exang": exang,
         "oldpeak": oldpeak,
+        "slope": slope,
+        "ca": ca,
+        "thal": thal
     }
     return pd.DataFrame(data, index=[0])
 
