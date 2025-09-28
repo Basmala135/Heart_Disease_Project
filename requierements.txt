@@ -1,0 +1,15 @@
+# Core libraries
+pandas
+numpy
+scikit-learn
+joblib
+
+# Visualization
+matplotlib
+seaborn
+
+# Model explainability / feature selection
+xgboost
+
+# Web app
+streamlit
